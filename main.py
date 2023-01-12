@@ -17,7 +17,7 @@ df1.rename(columns={'POSTED_BY': 'posted_by',
                     'ADDRESS': 'address',
                     'LONGITUDE': 'lon',
                     'LATITUDE': 'lat',
-                    'TARGET(PRICE_IN_LACS)': 'price_lacs'}, inplace=True)
+                    'TARGET(PRICE_IN_LACS)': 'price_lakh'}, inplace=True)
 df1["city"] = df1["address"].str.split(",", expand=True)[1]
 df1.drop(columns=["address"], inplace=True)
 df1 = df1.iloc[:, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 10]]
@@ -57,12 +57,19 @@ df = pd.read_csv("Participants_Data_HPP/Train1.csv")
 # print(df.city.unique().size)
 
 
-# print(df[["area_sqft", "price_lacs"]].describe())
+# print(df[["area_sqft", "price_lakh"]].describe())
 
-mean_price_by_city = df.groupby("city")["price_lacs"].mean().sort_values(ascending=False).head()
-print(mean_price_by_city)
+# mean_price_by_city = df.groupby("city")["price_lakh"].mean().sort_values(ascending=False)
+# print(mean_price_by_city.head())
+# mean_price_by_city.plot(
+#     kind="bar",
+#     xlabel="City",
+#     ylabel="Mean Price [Lakh]",
+#     title="Mean House Price by City"
+# )
+# plt.show()
 
-plt.hist(mean_price_by_city)
-plt.xlabel('City'),
-plt.ylabel('Mean Price [Lacs]'),
-plt.title('Mean House Price [Lacs]')
+# print(df[0:1000])
+# pudulayam = df.loc[26047, 'city'] = 'Tamil Nadu'
+# print(pudulayam)
+
