@@ -42,23 +42,23 @@ df2.drop(columns=["address"], inplace=True)
 
 df = pd.read_csv("Participants_Data_HPP/Train1.csv")
 
-# fig = px.scatter_mapbox(
-#     df,
-#     lat="lat",
-#     lon="lon",
-#     center={"lat": 20.5937, "lon": 78.9629},
-#     width=625,
-#     height=825,
-#     hover_data=['price_lacs'],
-# )
-# fig.update_layout(mapbox_style="open-street-map")
-# fig.show()
+fig = px.scatter_mapbox(
+    df,
+    lat="lat",
+    lon="lon",
+    center={"lat": 20.5937, "lon": 78.9629},
+    width=625,
+    height=825,
+    hover_data=['price_lakh'],
+)
+fig.update_layout(mapbox_style="open-street-map")
+fig.show()
 
-# print(df.city.unique().size)
+print(df.city.unique().size)
 
 
 # print(df[["area_sqft", "price_lakh"]].describe())
-
+#
 # mean_price_by_city = df.groupby("city")["price_lakh"].mean().sort_values(ascending=False)
 # print(mean_price_by_city.head())
 # mean_price_by_city.plot(
@@ -68,7 +68,7 @@ df = pd.read_csv("Participants_Data_HPP/Train1.csv")
 #     title="Mean House Price by City"
 # )
 # plt.show()
-
+#
 # print(df[0:1000])
 # pudulayam = df.loc[26047, 'city'] = 'Tamil Nadu'
 # print(pudulayam)
