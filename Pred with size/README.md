@@ -23,8 +23,8 @@ The purpose of this project is to determine if there are BHK(bathroom, hall, kit
 
 ### Technologies
 * Python
-* MS Excel
-* Pycharm as IDE (or Jupyter)
+* MS Excel/LibreOffice Calc
+* Pycharm/Jupyter
 
 ## Project Description
 This submodule of this repo is a price prediction of houses in Mumbai.
